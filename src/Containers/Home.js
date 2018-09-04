@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { personal } from 'utilities'
+import { contact } from 'personal'
 
 export default () => {
   return (
@@ -14,11 +14,11 @@ export default () => {
         experiencia con React js.
       </p>
 
-      <a href={personal.cvPdf} target="_blank" rel="noopener no referrer">
+      <a href={contact.cvPdf} target="_blank" rel="noopener no referrer">
         CV
       </a>
 
-      <a href={personal.github} target="_blank" rel="noopener no referrer">
+      <a href={contact.github} target="_blank" rel="noopener no referrer">
         GitHub
       </a>
     </Fragment>

@@ -11,7 +11,8 @@ import {
 } from 'Components'
 import { Home, About, Projects, Contact } from 'Containers'
 
-import { navigation, personal } from 'utilities'
+import { navigation } from 'utilities'
+import { contact } from 'personal'
 
 class App extends Component {
   render() {
@@ -37,7 +38,7 @@ class App extends Component {
               height: '90px'
             }}
           >
-            <ProfileImage src={personal.profilePicture} />
+            <ProfileImage src={contact.profilePicture} />
           </div>
           <Card>
             <Switch>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { ContactList } from 'Components'
-import { personal } from 'utilities'
+import { contact } from 'personal'
 
 export default () => {
   return (
@@ -14,14 +14,14 @@ export default () => {
           {
             id: 'phone',
             icon: 'fas fa-phone',
-            link: `https://api.whatsapp.com/send?phone=${personal.phone}`,
-            label: personal.phone
+            link: `https://api.whatsapp.com/send?phone=${contact.phone}`,
+            label: contact.phone
           },
           {
             id: 'email',
             icon: 'fas fa-envelope',
-            link: `email:${personal.gmail}`,
-            label: personal.gmail
+            link: `email:${contact.gmail}`,
+            label: contact.gmail
           }
         ]}
       />
@@ -32,19 +32,19 @@ export default () => {
           {
             id: 'twitter',
             icon: 'fab fa-twitter',
-            link: personal.twitter,
+            link: contact.twitter,
             label: '@ordazsgustavo'
           },
           {
             id: 'instagram',
             icon: 'fab fa-instagram',
-            link: personal.instagram,
+            link: contact.instagram,
             label: '@ordazsgustavo'
           },
           {
             id: 'linkedin',
             icon: 'fab fa-linkedin',
-            link: personal.linkedin,
+            link: contact.linkedin,
             label: 'Linkedin'
           }
         ]}
@@ -56,19 +56,19 @@ export default () => {
           {
             id: 'platzi',
             icon: 'fas fa-heart',
-            link: personal.platzi,
+            link: contact.platzi,
             label: 'Platzi'
           },
           {
             id: 'github',
             icon: 'fab fa-github',
-            link: personal.github,
+            link: contact.github,
             label: '@ordazgustavo'
           },
           {
             id: 'hackerrank',
             icon: 'fab fa-hackerrank',
-            link: personal.hackerrank,
+            link: contact.hackerrank,
             label: 'Hackerrank'
           }
         ]}

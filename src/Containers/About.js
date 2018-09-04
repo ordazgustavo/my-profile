@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
-import { personal } from 'utilities'
+import { Certification } from 'Components'
+import { certifications } from 'personal'
 
 export default () => {
   return (
@@ -89,25 +90,9 @@ export default () => {
 
       <h3>Certificaciones</h3>
       <hr />
-      <section>
-        <p>
-          <strong>Platzi</strong>
-        </p>
-        <p>Curso de Programación Básica</p>
-        <a href={personal.platzi}>Ver</a>
-      </section>
-      <section>
-        <p>
-          <strong>Udemy</strong>
-        </p>
-        <p>React 16 - The Complete Guide (incl. React Router 4 & Redux)</p>
-        <p>
-          <small>may. de 2018 - Licencia UC-HS0WTWDH</small>
-        </p>
-        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-HS0WTWDH.jpg?l=null">
-          Ver
-        </a>
-      </section>
+      {certifications.map(cert => (
+        <Certification key={cert.license} {...cert} />
+      ))}
     </Fragment>
   )
 }
