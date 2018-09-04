@@ -2,6 +2,7 @@ export default [
   {
     id: 'urb1',
     company: 'Urbaner',
+    location: 'Lima, PE',
     position: 'Front-end Developer',
     date: { from: '2018-05-01', to: '' },
     description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -12,16 +13,20 @@ export default [
   {
     id: 'co1',
     company: 'Cambista Online',
+    location: 'Lima, PE',
     position: 'Full-stack Developer',
     date: { from: '2017-08-01', to: '2018-04-01' },
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    Error repudiandae provident praesentium dicta perspiciatis, sapiente fuga 
-    in et natus quasi dolor odio earum molestias sint esse accusantium 
-    voluptates id inventore!`
+    description: `Encargado de la administración y mantenimiento del sistema, 
+    implementación de nuevas características, mejoras de las existentes. 
+    Mantenimiento del servidor. Realizada actividad de migración de servidor. 
+    Encargado del desarrollo de SAVIO, aplicación web desarrollada con React 
+    que permite la búsqueda del mejor tipo de cambio de forma automática según 
+    los requerimientos del usuario.`
   },
   {
     id: 'pol1',
     company: 'IA Policia Municipal de Maneiro',
+    location: 'Pampatar, VE',
     position: 'Pasante',
     date: { from: '2017-08-01', to: '2018-04-01' },
     description: `Realizada actividad de pasantía como requisito para optar por el
@@ -35,6 +40,7 @@ export default [
   {
     id: 'eng1',
     company: 'ENGINEXT Corporation',
+    location: 'Houston, USA',
     position: 'Administrador de base de datos',
     date: { from: '2016-02-01', to: '2016-05-01' },
     description: `Gestión y mantenimiento de la Base de Datos del sistema 

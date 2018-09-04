@@ -31,15 +31,7 @@ class App extends Component {
         </header>
 
         <Content direction="column">
-          <div
-            style={{
-              position: 'relative',
-              width: '150px',
-              height: '90px'
-            }}
-          >
-            <ProfileImage src={contact.profilePicture} />
-          </div>
+          <ProfileImage src={contact.profilePicture} />
           <Card>
             <Switch>
               <Route exact path="/" component={Home} />

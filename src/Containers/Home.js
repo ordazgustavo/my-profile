@@ -5,19 +5,18 @@ import { contact } from 'personal'
 export default () => {
   return (
     <Fragment>
-      <h3>Front End Developer</h3>
-      <hr />
+      <p>Hola, soy Gustavo Ordaz.</p>
       <p>
-        Profesional Universitario en el área de Ingeniería de Sistemas,
-        enfocado en el desarrollo web. Con dos años de experiencia en el
-        mantenimiento, administración y desarrollo de sistemas web. Un año de
-        experiencia con React js.
+        Soy un Web Developer con dos años de experiencia en el área. Me
+        apasiona trabajar en el front-end, sin embargo, también tengo
+        experiencia con lenguajes de back-end como <strong>PHP</strong> y{' '}
+        <strong>Python</strong>. Tengo un año trabajando con{' '}
+        <strong>React JS</strong>, ya sea, creando y desplegando aplicaciones o
+        trabajando con aplicaciones previamente desarrolladas.
       </p>
-
       <a href={contact.cvPdf} target="_blank" rel="noopener no referrer">
         CV
-      </a>
-
+      </a>{' '}
       <a href={contact.github} target="_blank" rel="noopener no referrer">
         GitHub
       </a>

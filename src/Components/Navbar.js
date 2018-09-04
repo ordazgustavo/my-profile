@@ -20,6 +20,7 @@ export const NavItem = styled.li`
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  text-align: center;
   > a {
     color: ${colors.tealBlue};
     text-decoration: none;
@@ -29,6 +30,7 @@ export const NavItem = styled.li`
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    text-transform: uppercase;
     ${transition({ property: 'border' })};
   }
   > a:hover {
@@ -37,6 +39,9 @@ export const NavItem = styled.li`
   > a:hover,
   a.active {
     color: ${colors.cambridgeBlue};
+  }
+  @media (max-width: 700px) {
+    font-size: 12px;
   }
 `
 

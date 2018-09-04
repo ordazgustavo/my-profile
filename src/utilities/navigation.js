@@ -1,7 +1,7 @@
 export default [
   {
     id: 'home',
-    label: 'Yo',
+    label: 'Gustavo Ordaz',
     link: '/',
     exact: true
   },

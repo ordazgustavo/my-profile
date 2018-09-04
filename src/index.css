@@ -141,6 +141,7 @@ h5,
 h6 {
   font-weight: bold;
   margin: 10px 0;
+  color: #696969;
 }
 h2 {
   font-size: 24px;
@@ -153,13 +154,15 @@ h4 {
 }
 
 p {
-  color: #222;
-  line-height: 20px;
+  font-size: 20px;
+  color: #808080;
+  line-height: 28px;
   margin: 20px 0;
 }
 
 strong {
   font-weight: bold;
+  color: #696969;
 }
 
 small {

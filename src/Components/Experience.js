@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default ({ company, position, date, description }) => {
+export default ({ company, location, position, date, description }) => {
   return (
     <div>
       <p>
-        <strong>{company}</strong>
+        <strong>{company}</strong> - <small>{location}</small>
         <br />
         <small>
           {position} - {date.from} - {date.to || 'Act.'}
