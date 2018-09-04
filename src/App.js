@@ -1,0 +1,56 @@
+import React, { Component } from 'react'
+import { Switch, Route, NavLink } from 'react-router-dom'
+
+import {
+  Layout,
+  Navbar,
+  NavItem,
+  ProfileImage,
+  Card,
+  Content
+} from 'Components'
+import { Home, About, Projects, Contact } from 'Containers'
+
+import { navigation, personal } from 'utilities'
+
+class App extends Component {
+  render() {
+    return (
+      <Layout>
+        <header>
+          <Navbar>
+            {navigation.map(item => (
+              <NavItem key={item.id}>
+                <NavLink exact={item.exact} to={item.link}>
+                  {item.label}
+                </NavLink>
+              </NavItem>
+            ))}
+          </Navbar>
+        </header>
+
+        <Content direction="column">
+          <div
+            style={{
+              position: 'relative',
+              width: '150px',
+              height: '90px'
+            }}
+          >
+            <ProfileImage src={personal.profilePicture} />
+          </div>
+          <Card>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about/" component={About} />
+              <Route path="/projects/" component={Projects} />
+              <Route path="/contact/" component={Contact} />
+            </Switch>
+          </Card>
+        </Content>
+      </Layout>
+    )
+  }
+}
+
+export default App
