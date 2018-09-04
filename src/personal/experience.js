@@ -28,7 +28,7 @@ export default [
     company: 'IA Policia Municipal de Maneiro',
     location: 'Pampatar, VE',
     position: 'Pasante',
-    date: { from: '2017-08-01', to: '2018-04-01' },
+    date: { from: '2017-01-01', to: '2017-05-01' },
     description: `Realizada actividad de pasantía como requisito para optar por el
     título de Ingeniero de Sistemas, en la cual se desarrolló un sistema
     automatizado de entorno web llamado SAGA a ser implantado en los

@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 export default ({ company, location, position, date, description }) => {
   return (
@@ -7,7 +8,8 @@ export default ({ company, location, position, date, description }) => {
         <strong>{company}</strong> - <small>{location}</small>
         <br />
         <small>
-          {position} - {date.from} - {date.to || 'Act.'}
+          {position} - {moment(date.from).format('MMM YYYY')} -{' '}
+          {date.to ? moment(date.to).format('MMM YYYY') : 'Act.'}
         </small>
       </p>
       <p>{description}</p>
