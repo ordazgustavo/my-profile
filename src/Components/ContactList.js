@@ -6,7 +6,7 @@ import { colors } from 'utilities'
 const ListItem = styled.li`
   > i {
     margin-right: 15px;
-    color: ${colors.cambridgeBlue};
+    color: ${colors.greenSheen};
     width: 16px;
   }
 `

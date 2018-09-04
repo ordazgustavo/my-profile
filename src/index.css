@@ -133,14 +133,6 @@ table {
   * CUSTOM
   */
 
-a {
-  color: #77aca2;
-  text-decoration: none;
-}
-a:hover {
-  color: #468189;
-}
-
 h1,
 h2,
 h3,
@@ -172,4 +164,13 @@ strong {
 
 small {
   font-size: 12px;
+}
+
+a {
+  color: #77aca2;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+a:hover {
+  color: #468189;
 }
