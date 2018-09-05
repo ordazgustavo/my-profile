@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { colors } from 'utilities'
 
 const ListItem = styled.li`
-  font-size: 20px;
   margin: 10px 0;
   > i {
     margin-right: 15px;
