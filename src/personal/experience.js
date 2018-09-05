@@ -5,10 +5,9 @@ export default [
     location: 'Lima, PE',
     position: 'Front-end Developer',
     date: { from: '2018-05-01', to: '' },
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    Error repudiandae provident praesentium dicta perspiciatis, sapiente fuga 
-    in et natus quasi dolor odio earum molestias sint esse accusantium 
-    voluptates id inventore!`
+    description: `Encargado del mantenimiento e inclusion de mejoras en las
+    tres aplicaciones principales de la empresa (Admin, App Client y Merchant
+    Client)`
   },
   {
     id: 'co1',
