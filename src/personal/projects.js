@@ -9,7 +9,7 @@ export default [
   {
     id: 'savio',
     name: 'Soy Savio',
-    description: `Autor de Soy Savio, aplicacion web desarrollada en React, 
+    description: `Autor de Soy Savio, aplicación web desarrollada en React, 
     que permite conectar a personas con agencias de cambio de manera segura.`,
     link: 'http://soysavio.com',
     label: 'Visitar'

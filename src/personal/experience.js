@@ -24,7 +24,7 @@ export default [
   },
   {
     id: 'pol1',
-    company: 'IA Policia Municipal de Maneiro',
+    company: 'IA Policía Municipal de Maneiro',
     location: 'Pampatar, VE',
     position: 'Pasante',
     date: { from: '2017-01-01', to: '2017-05-01' },
