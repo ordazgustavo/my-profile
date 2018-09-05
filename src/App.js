@@ -7,7 +7,8 @@ import {
   NavItem,
   ProfileImage,
   Card,
-  Content
+  Content,
+  SocialIcons
 } from 'Components'
 import { Home, About, Projects, Contact } from 'Containers'
 
@@ -40,6 +41,7 @@ class App extends Component {
               <Route path="/contact/" component={Contact} />
             </Switch>
           </Card>
+          <SocialIcons />
         </Content>
       </Layout>
     )

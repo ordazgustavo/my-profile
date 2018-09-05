@@ -7,9 +7,7 @@ export default ({ issuer, title, date, license, link, label }) => {
       <p>
         <strong>{title}</strong>
         <br />
-        {issuer}
-      </p>
-      <p>
+        {issuer}{' '}
         <small>
           {moment(date).format('ll')} {`- ${license}`}
         </small>

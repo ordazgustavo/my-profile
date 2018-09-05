@@ -5,6 +5,8 @@ import ProfileImage from './ProfileImage'
 import ContactList from './ContactList'
 import Experience from './Experience'
 import Certification from './Certification'
+import SocialIcons from './SocialIcons'
+import Project from './Project'
 
 export * from './Navbar'
 
@@ -15,5 +17,7 @@ export {
   ProfileImage,
   ContactList,
   Experience,
-  Certification
+  Certification,
+  SocialIcons,
+  Project
 }

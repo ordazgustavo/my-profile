@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { elevation } from 'utilities'
+import { elevation, colors } from 'utilities'
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -13,6 +13,8 @@ const Image = styled.img`
   width: 190px;
   height: 190px;
   border-radius: 50%;
+  background: ${colors.maastrichtBlue};
+  border: 5px solid ${colors.maastrichtBlue};
   ${elevation[2]};
 `
 
