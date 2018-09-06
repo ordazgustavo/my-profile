@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { elevation, colors } from 'utilities'
+
+import { elevation, colors } from '../utilities'
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -18,10 +19,8 @@ const Image = styled.img`
   ${elevation[2]};
 `
 
-export default props => {
-  return (
-    <ImageWrapper>
-      <Image {...props} />
-    </ImageWrapper>
-  )
-}
+export default props => (
+  <ImageWrapper>
+    <Image {...props} />
+  </ImageWrapper>
+)
