@@ -33,7 +33,7 @@
   "lint-staged": {
     "linters": {
       "*.{js,md,css,json}": [
-        "prettier --write",
+        "npm run format",
         "git add"
       ]
     }
