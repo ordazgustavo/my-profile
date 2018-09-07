@@ -21,6 +21,6 @@ const Image = styled.img`
 
 export default props => (
   <ImageWrapper>
-    <Image {...props} />
+    <Image alt="" {...props} />
   </ImageWrapper>
 )

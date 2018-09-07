@@ -133,8 +133,19 @@ table {
   * CUSTOM
   */
 
+:root {
+  --maastrischt-blue: #031926;
+  --teal-blue: #468189;
+  --green-sheen: #77aca2;
+  --cambridge-blue: #9dbebb;
+  --azureish-white: #dbe9ee;
+
+  --light-grey: #595959;
+  --dark-grey: #424242;
+}
+
 html {
-  background: #031926;
+  background: var(--maastrischt-blue);
 }
 
 h1,
@@ -145,7 +156,7 @@ h5,
 h6 {
   font-weight: bold;
   margin: 10px 0;
-  color: #696969;
+  color: var(--dark-grey);
 }
 h2 {
   font-size: 24px;
@@ -159,14 +170,14 @@ h4 {
 
 p {
   font-size: 20px;
-  color: #808080;
+  color: var(--light-grey);
   line-height: 28px;
   margin: 20px 0;
 }
 
 strong {
   font-weight: bold;
-  color: #696969;
+  color: var(--dark-grey);
 }
 
 small {
@@ -175,12 +186,12 @@ small {
 
 a {
   font-size: 20px;
-  color: #77aca2;
+  color: var(--green-sheen);
   text-decoration: none;
   transition: color 0.5s ease;
 }
 a:hover {
-  color: #468189;
+  color: var(--teal-blue);
 }
 
 @media (max-width: 700px) {
