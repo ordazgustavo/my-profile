@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors, elevation, transition } from '../utilities'
 
-const Bar = styled.div`
+const Bar = styled.nav`
   width: 100%;
   height: 65px;
   background: ${colors.maastrichtBlue};

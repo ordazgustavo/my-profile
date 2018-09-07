@@ -16,13 +16,13 @@ const Item = styled.a`
 
 export default () => (
   <Wrapper>
-    <Item href={contact.instagram}>
+    <Item href={contact.instagram} aria-label="Mi Instagram">
       <i style={{ color: '#cd486b' }} className="fab fa-instagram" />
     </Item>
-    <Item href={contact.twitter}>
+    <Item href={contact.twitter} aria-label="Mi Twitter">
       <i className="fab fa-twitter" />
     </Item>
-    <Item href={contact.github}>
+    <Item href={contact.github} aria-label="Mi Github">
       <i style={{ color: '#000' }} className="fab fa-github" />
     </Item>
   </Wrapper>

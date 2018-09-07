@@ -17,17 +17,15 @@ import { contact } from './personal'
 
 export default () => (
   <Layout>
-    <header>
-      <Navbar>
-        {navigation.map(item => (
-          <NavItem key={item.id}>
-            <NavLink exact={item.exact} to={item.link}>
-              {item.label}
-            </NavLink>
-          </NavItem>
-        ))}
-      </Navbar>
-    </header>
+    <Navbar>
+      {navigation.map(item => (
+        <NavItem key={item.id}>
+          <NavLink exact={item.exact} to={item.link}>
+            {item.label}
+          </NavLink>
+        </NavItem>
+      ))}
+    </Navbar>
 
     <Content direction="column">
       <ProfileImage src={contact.profilePicture} />

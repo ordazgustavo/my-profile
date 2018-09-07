@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Content = styled.div`
+const Content = styled.main`
   padding: 50px 0;
   display: flex;
   justify-content: center;
