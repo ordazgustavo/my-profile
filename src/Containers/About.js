@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { Certification, Experience } from '../Components'
 import { experience, certifications } from '../personal'
 
-export default () => (
+const About = () => (
   <Fragment>
     <h3>Información Laboral</h3>
     <hr />
@@ -29,3 +29,5 @@ export default () => (
     ))}
   </Fragment>
 )
+
+export default About

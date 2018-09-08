@@ -1,9 +1,7 @@
 import React from 'react'
 import { Switch, Route, NavLink } from 'react-router-dom'
-import Loadable from 'react-loadable'
 
 import {
-  Loading,
   Layout,
   Navbar,
   NavItem,
@@ -12,22 +10,20 @@ import {
   Content,
   SocialIcons
 } from './Components'
-import { Home } from './Containers'
+import Home from './Containers/Home'
 
+import LoadableFactory from './utilities/LoadableFactory'
 import { navigation } from './utilities'
 import { contact } from './personal'
 
-const AsyncAbout = Loadable({
-  loader: () => import('./Containers/About'),
-  loading: Loading
+const AsyncAbout = LoadableFactory({
+  loader: () => import('./Containers/About')
 })
-const AsyncProjects = Loadable({
-  loader: () => import('./Containers/Projects'),
-  loading: Loading
+const AsyncProjects = LoadableFactory({
+  loader: () => import('./Containers/Projects')
 })
-const AsyncContact = Loadable({
-  loader: () => import('./Containers/Contact'),
-  loading: Loading
+const AsyncContact = LoadableFactory({
+  loader: () => import('./Containers/Contact')
 })
 
 export default () => (
