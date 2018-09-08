@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { Project } from '../Components'
 import { projects } from '../personal'
 
-export default () => (
+const Projects = () => (
   <Fragment>
     <h3>Proyectos</h3>
     <hr />
@@ -12,3 +12,5 @@ export default () => (
     ))}
   </Fragment>
 )
+
+export default Projects

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Switch, Route, NavLink } from 'react-router-dom'
 
 import {
@@ -10,34 +10,50 @@ import {
   Content,
   SocialIcons
 } from './Components'
-import { Home, About, Projects, Contact } from './Containers'
 
 import { navigation } from './utilities'
 import { contact } from './personal'
 
-export default () => (
-  <Layout>
-    <Navbar>
-      {navigation.map(item => (
-        <NavItem key={item.id}>
-          <NavLink exact={item.exact} to={item.link}>
-            {item.label}
-          </NavLink>
-        </NavItem>
-      ))}
-    </Navbar>
+class App extends Component {
+  onMouseOverHandler = component => () =>
+    component.preload instanceof Function && component.preload()
 
-    <Content direction="column">
-      <ProfileImage src={contact.profilePicture} />
-      <Card>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about/" component={About} />
-          <Route path="/projects/" component={Projects} />
-          <Route path="/contact/" component={Contact} />
-        </Switch>
-      </Card>
-      <SocialIcons />
-    </Content>
-  </Layout>
-)
+  render() {
+    return (
+      <Layout>
+        <Navbar>
+          {navigation.map(item => (
+            <NavItem
+              key={item.id}
+              onFocus={this.onMouseOverHandler(item.component)}
+              onMouseOver={this.onMouseOverHandler(item.component)}
+            >
+              <NavLink exact={item.exact} to={item.link}>
+                {item.label}
+              </NavLink>
+            </NavItem>
+          ))}
+        </Navbar>
+
+        <Content direction="column">
+          <ProfileImage src={contact.profilePicture} />
+          <Card>
+            <Switch>
+              {navigation.map(route => (
+                <Route
+                  key={route.id}
+                  exact={route.exact}
+                  path={route.link}
+                  component={route.component}
+                />
+              ))}
+            </Switch>
+          </Card>
+          <SocialIcons />
+        </Content>
+      </Layout>
+    )
+  }
+}
+
+export default App

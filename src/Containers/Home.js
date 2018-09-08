@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 import { contact } from '../personal'
 
-export default () => (
+const Home = () => (
   <Fragment>
     <p>Hola, soy Gustavo Ordaz.</p>
     <p>
@@ -21,3 +21,5 @@ export default () => (
     </a>
   </Fragment>
 )
+
+export default Home
