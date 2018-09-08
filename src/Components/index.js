@@ -1,4 +1,3 @@
-import Loading from './Loading'
 import Layout from './Layout'
 import Content from './Content'
 import Card from './Card'
@@ -12,7 +11,6 @@ import Project from './Project'
 export * from './Navbar'
 
 export {
-  Loading,
   Layout,
   Content,
   Card,

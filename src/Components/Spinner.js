@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '../utilities'
+import { maastrichtBlue } from '../utilities'
 
 const Icon = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Icon = styled.div`
   align-items: center;
   height: 100px;
   > i {
-    color: ${colors.maastrichtBlue};
+    color: ${maastrichtBlue};
     font-size: 50px;
   }
 `
