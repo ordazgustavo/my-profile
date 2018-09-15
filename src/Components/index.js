@@ -7,6 +7,7 @@ import Experience from './Experience'
 import Certification from './Certification'
 import SocialIcons from './SocialIcons'
 import Project from './Project'
+import Loading from './Loading'
 
 export * from './Navbar'
 
@@ -19,5 +20,6 @@ export {
   Experience,
   Certification,
   SocialIcons,
-  Project
+  Project,
+  Loading
 }

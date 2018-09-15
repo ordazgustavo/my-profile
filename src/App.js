@@ -15,8 +15,9 @@ import {
   SocialIcons
 } from './Components'
 
-import { navigation, animations } from './utilities'
 import { contact } from './personal'
+import navigation from './utilities/navigation'
+import { animations } from './utilities'
 
 library.add(fas, fab)
 

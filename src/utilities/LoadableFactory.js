@@ -1,6 +1,5 @@
 import Loadable from 'react-loadable'
-
-import Loading from '../Components/Loading'
+import { Loading } from '../Components'
 
 export default opts =>
   Loadable({

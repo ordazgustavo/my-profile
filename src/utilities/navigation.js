@@ -1,5 +1,4 @@
 import LoadableFactory from './LoadableFactory'
-import Loading from '../Components/Loading'
 import Home from '../Containers/Home'
 
 export default [
@@ -15,8 +14,7 @@ export default [
     label: 'Acerca de',
     link: '/about/',
     component: LoadableFactory({
-      loader: () => import('../Containers/About'),
-      loading: Loading
+      loader: () => import('../Containers/About')
     })
   },
   {
@@ -24,8 +22,7 @@ export default [
     label: 'Proyectos',
     link: '/projects/',
     component: LoadableFactory({
-      loader: () => import('../Containers/Projects'),
-      loading: Loading
+      loader: () => import('../Containers/Projects')
     })
   },
   {
@@ -33,8 +30,7 @@ export default [
     label: 'Contacto',
     link: '/contact/',
     component: LoadableFactory({
-      loader: () => import('../Containers/Contact'),
-      loading: Loading
+      loader: () => import('../Containers/Contact')
     })
   }
 ]
