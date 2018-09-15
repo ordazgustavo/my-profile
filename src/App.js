@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Switch, Route, NavLink } from 'react-router-dom'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
 import {
   Layout,
   Navbar,
@@ -13,6 +17,8 @@ import {
 
 import { navigation } from './utilities'
 import { contact } from './personal'
+
+library.add(fas, fab)
 
 class App extends Component {
   onMouseOverHandler = component => () =>

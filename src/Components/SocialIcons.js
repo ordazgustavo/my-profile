@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { contact } from '../personal'
 
@@ -12,18 +13,19 @@ const Wrapper = styled.div`
 const Item = styled.a`
   font-size: 45px;
   margin: 0 25px;
+  color: ${({ color }) => color || 'inherit'};
 `
 
 export default () => (
   <Wrapper>
-    <Item href={contact.instagram} aria-label="Mi Instagram">
-      <i style={{ color: '#cd486b' }} className="fab fa-instagram" />
+    <Item href={contact.instagram} color="#cd486b" aria-label="Mi Instagram">
+      <FontAwesomeIcon icon={['fab', 'instagram']} />
     </Item>
-    <Item href={contact.twitter} aria-label="Mi Twitter">
-      <i className="fab fa-twitter" />
+    <Item href={contact.twitter} color="#00aced" aria-label="Mi Twitter">
+      <FontAwesomeIcon icon={['fab', 'twitter']} />
     </Item>
-    <Item href={contact.github} aria-label="Mi Github">
-      <i style={{ color: '#000' }} className="fab fa-github" />
+    <Item href={contact.github} color="#000" aria-label="Mi Github">
+      <FontAwesomeIcon icon={['fab', 'github']} />
     </Item>
   </Wrapper>
 )
