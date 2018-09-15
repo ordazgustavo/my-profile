@@ -13,6 +13,7 @@ export const hackerrank = 'https://www.hackerrank.com/ordazsgustavo'
 
 export const gmail = 'ordazsgustavo@gmail.com'
 export const phone = '51994778426'
+export const blog = 'https://blogordazgustavo.netlify.com'
 
 export default {
   profilePicture,
@@ -24,5 +25,6 @@ export default {
   platzi,
   hackerrank,
   gmail,
-  phone
+  phone,
+  blog
 }

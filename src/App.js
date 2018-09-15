@@ -15,12 +15,30 @@ import {
   SocialIcons
 } from './Components'
 
-import { navigation } from './utilities'
+import { navigation, animations } from './utilities'
 import { contact } from './personal'
 
 library.add(fas, fab)
 
 class App extends Component {
+  state = {
+    prevHeight: '100px'
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { height } = getComputedStyle(this.wrapper.firstChild)
+    const { prevHeight } = this.state
+    if (height !== prevHeight) {
+      animations.fluidHeight(this.wrapper, prevHeight, height)
+
+      if (height !== prevState.prevHeight) {
+        this.setState({
+          prevHeight: height
+        })
+      }
+    }
+  }
+
   onMouseOverHandler = component => () =>
     component.preload instanceof Function && component.preload()
 
@@ -43,17 +61,23 @@ class App extends Component {
 
         <Content direction="column">
           <ProfileImage src={contact.profilePicture} />
-          <Card>
-            <Switch>
-              {navigation.map(route => (
-                <Route
-                  key={route.id}
-                  exact={route.exact}
-                  path={route.link}
-                  component={route.component}
-                />
-              ))}
-            </Switch>
+          <Card
+            innerRef={wrapper => {
+              this.wrapper = wrapper
+            }}
+          >
+            <div style={{ overflow: 'hidden' }}>
+              <Switch>
+                {navigation.map(route => (
+                  <Route
+                    key={route.id}
+                    exact={route.exact}
+                    path={route.link}
+                    component={route.component}
+                  />
+                ))}
+              </Switch>
+            </div>
           </Card>
           <SocialIcons />
         </Content>

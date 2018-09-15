@@ -16,6 +16,7 @@ const Image = styled.img`
   border-radius: 50%;
   background: ${colors.maastrichtBlue};
   border: 5px solid ${colors.maastrichtBlue};
+  box-sizing: border-box;
   ${elevation[2]};
 `
 

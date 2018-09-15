@@ -24,8 +24,8 @@ const Home = () => (
       , ya sea, creando y desplegando aplicaciones o trabajando con
       aplicaciones previamente desarrolladas.
     </p>
-    <a href={contact.cvPdf} target="_blank" rel="noopener noreferrer">
-      CV
+    <a href={contact.blog} target="_blank" rel="noopener noreferrer">
+      Blog
     </a>{' '}
     <a href={contact.github} target="_blank" rel="noopener noreferrer">
       GitHub

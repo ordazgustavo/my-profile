@@ -65,6 +65,12 @@ const Contact = () => (
           label: '@ordazgustavo'
         },
         {
+          id: 'blog',
+          icon: ['fas', 'rss'],
+          link: contact.blog,
+          label: 'Blog'
+        },
+        {
           id: 'hackerrank',
           icon: ['fab', 'hackerrank'],
           link: contact.hackerrank,
