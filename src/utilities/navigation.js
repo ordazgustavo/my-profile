@@ -2,16 +2,16 @@ import LoadableFactory from './LoadableFactory'
 import Home from '../Containers/Home'
 
 export default [
-  {
-    id: 'home',
-    label: 'Gustavo Ordaz',
-    link: '/',
-    exact: true,
-    component: Home
-  },
+  // {
+  //   id: 'home',
+  //   label: 'Perfil',
+  //   link: '/',
+  //   exact: true,
+  //   component: Home
+  // },
   {
     id: 'about',
-    label: 'Acerca de',
+    label: 'Acerca',
     link: '/about/',
     component: LoadableFactory({
       loader: () => import('../Containers/About')

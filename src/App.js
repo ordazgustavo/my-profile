@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { Switch, Route, NavLink } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
+import Home from './Containers/Home'
 import {
   Layout,
   Navbar,
-  NavItem,
+  NavLink,
   ProfileImage,
   Card,
   Content,
@@ -48,7 +49,7 @@ class App extends Component {
       <Layout>
         <Navbar>
           {navigation.map(item => (
-            <NavItem
+            <li
               key={item.id}
               onFocus={this.onMouseOverHandler(item.component)}
               onMouseOver={this.onMouseOverHandler(item.component)}
@@ -56,7 +57,7 @@ class App extends Component {
               <NavLink exact={item.exact} to={item.link}>
                 {item.label}
               </NavLink>
-            </NavItem>
+            </li>
           ))}
         </Navbar>
 
@@ -69,6 +70,7 @@ class App extends Component {
           >
             <div style={{ overflow: 'hidden' }}>
               <Switch>
+                <Route exact path="/" component={Home} />
                 {navigation.map(route => (
                   <Route
                     key={route.id}
