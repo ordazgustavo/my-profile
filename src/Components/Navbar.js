@@ -11,20 +11,20 @@ const Bar = styled.header`
   z-index: 2;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   flex-wrap: wrap;
   top: 0;
   width: 100%;
-  &:hover {
+  ${media.tablet`
+    flex-direction: row;
+  `} &:hover {
     h1 {
       transform: translate3d(110px, 0, 0);
       transition: 0.3s all cubic-bezier(0.165, 0.84, 0.44, 1);
     }
   }
-  ${media.phone`
-    flex-direction: column;
-    align-items: center;
-  `};
 `
 
 const SiteNav = styled.nav`
