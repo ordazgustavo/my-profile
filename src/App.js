@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Router } from '@reach/router'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-import Home from './Containers/Home'
+import { Home, AsyncAbout, AsyncProjects, AsyncContact } from './Containers'
+
 import {
   Layout,
   Navbar,
@@ -18,42 +19,38 @@ import {
 
 import { contact } from './personal'
 import navigation from './utilities/navigation'
-import { animations } from './utilities'
+// import { animations } from './utilities'
 
 library.add(fas, fab)
 
 class App extends Component {
-  state = {
-    prevHeight: '100px'
-  }
+  // state = {
+  //   prevHeight: '100px'
+  // }
 
-  componentDidUpdate(prevProps, prevState) {
-    const { height } = getComputedStyle(this.wrapper.firstChild)
-    const { prevHeight } = this.state
-    if (height !== prevHeight) {
-      animations.fluidHeight(this.wrapper, prevHeight, height)
+  // componentDidUpdate(prevProps, prevState) {
+  //   const { height } = getComputedStyle(this.wrapper.firstChild)
+  //   const { prevHeight } = this.state
+  //   if (height !== prevHeight) {
+  //     animations.fluidHeight(this.wrapper, prevHeight, height)
 
-      if (height !== prevState.prevHeight) {
-        this.setState({
-          prevHeight: height
-        })
-      }
-    }
-  }
+  //     if (height !== prevState.prevHeight) {
+  //       this.setState({
+  //         prevHeight: height
+  //       })
+  //     }
+  //   }
+  // }
 
-  onMouseOverHandler = component => () =>
-    component.preload instanceof Function && component.preload()
+  // onMouseOverHandler = component => () =>
+  //   component.preload instanceof Function && component.preload()
 
   render() {
     return (
       <Layout>
         <Navbar>
           {navigation.map(item => (
-            <li
-              key={item.id}
-              onFocus={this.onMouseOverHandler(item.component)}
-              onMouseOver={this.onMouseOverHandler(item.component)}
-            >
+            <li key={item.id}>
               <NavLink exact={item.exact} to={item.link}>
                 {item.label}
               </NavLink>
@@ -69,17 +66,12 @@ class App extends Component {
             }}
           >
             <div style={{ overflow: 'hidden' }}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                {navigation.map(route => (
-                  <Route
-                    key={route.id}
-                    exact={route.exact}
-                    path={route.link}
-                    component={route.component}
-                  />
-                ))}
-              </Switch>
+              <Router>
+                <Home path="/" />
+                <AsyncAbout path="about" />
+                <AsyncProjects path="projects" />
+                <AsyncContact path="contact" />
+              </Router>
             </div>
           </Card>
           <SocialIcons />
