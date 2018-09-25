@@ -1,17 +1,23 @@
+import uuid from 'uuid'
+import { AsyncAbout, AsyncProjects, AsyncContact } from '../Containers'
+
 export default [
   {
-    id: 'about',
+    id: uuid(),
     label: 'Acerca',
-    link: 'about'
+    link: 'about',
+    component: AsyncAbout
   },
   {
-    id: 'projects',
+    id: uuid(),
     label: 'Proyectos',
-    link: 'projects'
+    link: 'projects',
+    component: AsyncProjects
   },
   {
-    id: 'contact',
+    id: uuid(),
     label: 'Contacto',
-    link: 'contact'
+    link: 'contact',
+    component: AsyncContact
   }
 ]

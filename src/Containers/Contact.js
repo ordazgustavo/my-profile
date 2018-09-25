@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { ContactList } from '../Components'
 import { contact } from '../personal'
 
 const Contact = () => (
-  <Fragment>
+  <div>
     <h3>Contacto</h3>
     <hr />
     <ContactList
@@ -78,7 +78,7 @@ const Contact = () => (
         }
       ]}
     />
-  </Fragment>
+  </div>
 )
 
 export default Contact

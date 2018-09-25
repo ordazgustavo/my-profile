@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { Certification, Experience } from '../Components'
 import { experience, certifications } from '../personal'
 
 const About = () => (
-  <Fragment>
+  <div>
     <h3>Información Laboral</h3>
     <hr />
     {experience.map(exp => (
@@ -27,7 +27,7 @@ const About = () => (
     {certifications.map(cert => (
       <Certification key={cert.license} {...cert} />
     ))}
-  </Fragment>
+  </div>
 )
 
 export default About
