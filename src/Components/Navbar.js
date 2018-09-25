@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { colors, elevation, media } from '../utilities'
 import logo from '../assets/images/OGLight.png'
 
+const navHeight = '52px'
+
 const Bar = styled.header`
   background: ${colors.maastrichtBlue};
   ${elevation[4]};
@@ -53,16 +55,19 @@ export const NavLink = styled(Link)`
   letter-spacing: 5px;
   display: block;
   transition: all 0.3s ease;
+  height: ${navHeight};
+  box-sizing: border-box;
   ${media.tablet`
     font-size: 16px;
     padding: 15px 20px 18px;
   `} &:hover {
-    border-bottom: 4px solid ${props => props.underline};
+    border-bottom: 4px solid;
   }
 `
 
 const Name = styled.h1`
   margin: 0;
+  /* padding: 15px; */
   top: 0;
   position: absolute;
   display: none;
@@ -74,7 +79,7 @@ const Name = styled.h1`
   font-size: 24px;
   text-decoration: none;
   font-weight: 900;
-  line-height: 52px;
+  line-height: ${navHeight};
   color: #fff;
   transition: 0.3s, all, cubic-bezier(0.895, 0.03, 0.685, 0.22);
   ${media.tablet`display: block;`};
