@@ -1,36 +1,23 @@
-import LoadableFactory from './LoadableFactory'
-import Home from '../Containers/Home'
+import uuid from 'uuid'
+import { AsyncAbout, AsyncProjects, AsyncContact } from '../Containers'
 
 export default [
-  // {
-  //   id: 'home',
-  //   label: 'Perfil',
-  //   link: '/',
-  //   exact: true,
-  //   component: Home
-  // },
   {
-    id: 'about',
+    id: uuid(),
     label: 'Acerca',
-    link: '/about/',
-    component: LoadableFactory({
-      loader: () => import('../Containers/About')
-    })
+    link: 'about',
+    component: AsyncAbout
   },
   {
-    id: 'projects',
+    id: uuid(),
     label: 'Proyectos',
-    link: '/projects/',
-    component: LoadableFactory({
-      loader: () => import('../Containers/Projects')
-    })
+    link: 'projects',
+    component: AsyncProjects
   },
   {
-    id: 'contact',
+    id: uuid(),
     label: 'Contacto',
-    link: '/contact/',
-    component: LoadableFactory({
-      loader: () => import('../Containers/Contact')
-    })
+    link: 'contact',
+    component: AsyncContact
   }
 ]

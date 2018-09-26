@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { contact } from '../personal'
 
 const Home = () => (
-  <Fragment>
+  <div>
     <p>Hola, soy Gustavo Ordaz.</p>
     <p>
       Soy un Web Developer con dos años de experiencia en el área. Me apasiona
@@ -30,7 +30,7 @@ const Home = () => (
     <a href={contact.github} target="_blank" rel="noopener noreferrer">
       GitHub
     </a>
-  </Fragment>
+  </div>
 )
 
 export default Home

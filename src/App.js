@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-import Home from './Containers/Home'
+import { Home, AsyncAbout, AsyncProjects, AsyncContact } from './Containers'
+
 import {
   Layout,
   Navbar,
@@ -18,43 +18,25 @@ import {
 
 import { contact } from './personal'
 import navigation from './utilities/navigation'
-import { animations } from './utilities'
+import FadeTransitionRouter from './utilities/FadeTransitionRouter'
 
 library.add(fas, fab)
 
 class App extends Component {
-  state = {
-    prevHeight: '100px'
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { height } = getComputedStyle(this.wrapper.firstChild)
-    const { prevHeight } = this.state
-    if (height !== prevHeight) {
-      animations.fluidHeight(this.wrapper, prevHeight, height)
-
-      if (height !== prevState.prevHeight) {
-        this.setState({
-          prevHeight: height
-        })
-      }
-    }
-  }
-
-  onMouseOverHandler = component => () =>
-    component.preload instanceof Function && component.preload()
+  preloadComp = component => () =>
+    typeof component === 'function' ? component.preload() : undefined
 
   render() {
     return (
       <Layout>
         <Navbar>
           {navigation.map(item => (
-            <li
-              key={item.id}
-              onFocus={this.onMouseOverHandler(item.component)}
-              onMouseOver={this.onMouseOverHandler(item.component)}
-            >
-              <NavLink exact={item.exact} to={item.link}>
+            <li key={item.id}>
+              <NavLink
+                to={item.link}
+                onMouseOver={this.preloadComp(item.component)}
+                onFocus={this.preloadComp(item.component)}
+              >
                 {item.label}
               </NavLink>
             </li>
@@ -68,19 +50,12 @@ class App extends Component {
               this.wrapper = wrapper
             }}
           >
-            <div style={{ overflow: 'hidden' }}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                {navigation.map(route => (
-                  <Route
-                    key={route.id}
-                    exact={route.exact}
-                    path={route.link}
-                    component={route.component}
-                  />
-                ))}
-              </Switch>
-            </div>
+            <FadeTransitionRouter>
+              <Home path="/" />
+              <AsyncAbout path="about" />
+              <AsyncProjects path="projects" />
+              <AsyncContact path="contact" />
+            </FadeTransitionRouter>
           </Card>
           <SocialIcons />
         </Content>

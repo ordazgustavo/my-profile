@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { Project } from '../Components'
 import { projects } from '../personal'
 
 const Projects = () => (
-  <Fragment>
+  <div>
     <h3>Proyectos</h3>
     <hr />
     {projects.map(proj => (
       <Project key={proj.id} {...proj} />
     ))}
-  </Fragment>
+  </div>
 )
 
 export default Projects
