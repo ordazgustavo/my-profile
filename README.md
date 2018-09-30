@@ -4,7 +4,7 @@ Hello I'm Gustavo Ordaz
 
 I'm a web developer with two years of experience in the industry.
 
-Website: [Gustavo Ordaz](https://ordazgustavo.netlify.com)
+Website: [Gustavo Ordaz](https://www.ordazgustavo.com)
 
 ## The reason
 
