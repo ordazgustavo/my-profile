@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import format from 'date-fns/format'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default ({ issuer, title, date, license, link, label }) => (
@@ -9,7 +9,7 @@ export default ({ issuer, title, date, license, link, label }) => (
       <br />
       {issuer}{' '}
       <small>
-        {moment(date).format('ll')} {`- ${license}`}
+        {format(date, 'MMM dd YYYY')} - {license}
       </small>
     </p>
     <a href={link} target="_blank" rel="noopener noreferrer">

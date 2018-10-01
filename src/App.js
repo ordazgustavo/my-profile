@@ -23,10 +23,38 @@ import FadeTransitionRouter from './utilities/FadeTransitionRouter'
 library.add(fas, fab)
 
 class App extends Component {
+  state = {
+    profilePhoto: ''
+  }
+
+  componentDidMount() {
+    const { profilePhoto } = this.state
+
+    if (!profilePhoto) {
+      const miInit = {
+        method: 'GET',
+        headers: {
+          Accept: 'application/vnd.github.v3+json'
+        },
+        mode: 'cors',
+        cache: 'default'
+      }
+      fetch('https://api.github.com/users/ordazgustavo', miInit).then(
+        response => {
+          response.json().then(data => {
+            this.setState({ profilePhoto: data.avatar_url })
+          })
+        }
+      )
+    }
+  }
+
   preloadComp = component => () =>
     typeof component === 'function' ? component.preload() : undefined
 
   render() {
+    const { profilePhoto } = this.state
+
     return (
       <Layout>
         <Navbar>
@@ -44,7 +72,7 @@ class App extends Component {
         </Navbar>
 
         <Content direction="column">
-          <ProfileImage src={contact.profilePicture} />
+          <ProfileImage src={profilePhoto} />
           <Card
             innerRef={wrapper => {
               this.wrapper = wrapper

@@ -5,24 +5,28 @@ import { experience, certifications } from '../personal'
 
 const About = () => (
   <div>
-    <h3>Información Laboral</h3>
+    <h2>Información Laboral</h2>
     <hr />
     {experience.map(exp => (
       <Experience key={exp.id} {...exp} />
     ))}
 
-    <h3>Educación</h3>
+    <h2>Educación</h2>
     <hr />
-    <section>
-      <p>INGENIERO DE SISTEMAS - 2017 - UNIVERSIDAD DE MARGARITA</p>
-    </section>
-    <section>
+    <div>
       <p>
-        INGENIERO DE TELECOMUNICACIONES - 2012 - UNIVERSIDAD LATINA DE PANAMÁ
+        <strong>Universidad de Margarita</strong> - Venezuela 2017
       </p>
-    </section>
+      <p>Ingeniero de Sistemas</p>
+    </div>
+    <div>
+      <p>
+        <strong>Universidad Latina de Panamá</strong> - Panamá 2012
+      </p>
+      <p>Ingeniero de Telecomunicaciones</p>
+    </div>
 
-    <h3>Certificaciones</h3>
+    <h2>Certificaciones</h2>
     <hr />
     {certifications.map(cert => (
       <Certification key={cert.license} {...cert} />

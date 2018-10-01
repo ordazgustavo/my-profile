@@ -5,7 +5,7 @@ import { projects } from '../personal'
 
 const Projects = () => (
   <div>
-    <h3>Proyectos</h3>
+    <h2>Proyectos</h2>
     <hr />
     {projects.map(proj => (
       <Project key={proj.id} {...proj} />

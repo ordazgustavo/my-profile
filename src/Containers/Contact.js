@@ -5,7 +5,7 @@ import { contact } from '../personal'
 
 const Contact = () => (
   <div>
-    <h3>Contacto</h3>
+    <h2>Contacto</h2>
     <hr />
     <ContactList
       title="Directo"

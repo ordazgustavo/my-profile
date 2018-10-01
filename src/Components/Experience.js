@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import format from 'date-fns/format'
 
 export default ({ company, location, position, date, description }) => (
   <div>
@@ -7,8 +7,8 @@ export default ({ company, location, position, date, description }) => (
       <strong>{company}</strong> - <small>{location}</small>
       <br />
       <small>
-        {position} - {moment(date.from).format('MMM YYYY')} -{' '}
-        {date.to ? moment(date.to).format('MMM YYYY') : 'Act.'}
+        {position} - {format(date.from, 'MMM YYYY')} -{' '}
+        {date.to ? format(date.to, 'MMM YYYY') : 'Act.'}
       </small>
     </p>
     <p>{description}</p>
