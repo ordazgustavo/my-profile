@@ -1,10 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { animated } from 'react-spring'
 
 import { contact } from '../personal'
 
-const Home = () => (
-  <div>
+const Home = ({ style }) => (
+  <animated.div style={style}>
     <p>Hola, soy Gustavo Ordaz.</p>
     <p>
       Soy un Web Developer con dos años de experiencia en el área. Me apasiona
@@ -30,7 +31,7 @@ const Home = () => (
     <a href={contact.github} target="_blank" rel="noopener noreferrer">
       GitHub
     </a>
-  </div>
+  </animated.div>
 )
 
 export default Home

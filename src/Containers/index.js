@@ -1,15 +1,7 @@
 import Home from './Home'
 
-import LoadableFactory from '../utilities/LoadableFactory'
+import About from './About'
+import Projects from './Projects'
+import Contact from './Contact'
 
-const AsyncAbout = LoadableFactory({
-  loader: () => import('./About')
-})
-const AsyncProjects = LoadableFactory({
-  loader: () => import('./Projects')
-})
-const AsyncContact = LoadableFactory({
-  loader: () => import('./Contact')
-})
-
-export { Home, AsyncAbout, AsyncProjects, AsyncContact }
+export { Home, About, Projects, Contact }
