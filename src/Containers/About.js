@@ -1,10 +1,11 @@
 import React from 'react'
+import { animated } from 'react-spring'
 
 import { Certification, Experience } from '../Components'
 import { experience, certifications } from '../personal'
 
-const About = () => (
-  <div>
+const About = ({ style }) => (
+  <animated.div style={style}>
     <h2>Información Laboral</h2>
     <hr />
     {experience.map(exp => (
@@ -31,7 +32,7 @@ const About = () => (
     {certifications.map(cert => (
       <Certification key={cert.license} {...cert} />
     ))}
-  </div>
+  </animated.div>
 )
 
 export default About

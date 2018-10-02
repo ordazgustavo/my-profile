@@ -1,10 +1,11 @@
 import React from 'react'
+import { animated } from 'react-spring'
 
 import { ContactList } from '../Components'
 import { contact } from '../personal'
 
-const Contact = () => (
-  <div>
+const Contact = ({ style }) => (
+  <animated.div style={style}>
     <h2>Contacto</h2>
     <hr />
     <ContactList
@@ -78,7 +79,7 @@ const Contact = () => (
         }
       ]}
     />
-  </div>
+  </animated.div>
 )
 
 export default Contact

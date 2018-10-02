@@ -8,9 +8,8 @@ const Card = styled.div`
   padding: 50px;
   box-sizing: border-box;
   width: 90%;
-  min-height: 100px;
+  min-height: 276px;
   max-width: 700px;
-  margin: 0 auto;
   color: ${colors.black};
   overflow: hidden;
   ${elevation[4]};

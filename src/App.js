@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { Router, Location } from '@reach/router'
+import { Transition } from 'react-spring'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-import { Home, AsyncAbout, AsyncProjects, AsyncContact } from './Containers'
+import { Home, About, Projects, Contact } from './Containers'
 
 import {
   Layout,
@@ -16,9 +18,7 @@ import {
   SocialIcons
 } from './Components'
 
-import { contact } from './personal'
 import navigation from './utilities/navigation'
-import FadeTransitionRouter from './utilities/FadeTransitionRouter'
 
 library.add(fas, fab)
 
@@ -49,9 +49,6 @@ class App extends Component {
     }
   }
 
-  preloadComp = component => () =>
-    typeof component === 'function' ? component.preload() : undefined
-
   render() {
     const { profilePhoto } = this.state
 
@@ -60,30 +57,46 @@ class App extends Component {
         <Navbar>
           {navigation.map(item => (
             <li key={item.id}>
-              <NavLink
-                to={item.link}
-                onMouseOver={this.preloadComp(item.component)}
-                onFocus={this.preloadComp(item.component)}
-              >
-                {item.label}
-              </NavLink>
+              <NavLink to={item.link}>{item.label}</NavLink>
             </li>
           ))}
         </Navbar>
 
         <Content direction="column">
           <ProfileImage src={profilePhoto} />
-          <Card
-            innerRef={wrapper => {
-              this.wrapper = wrapper
-            }}
-          >
-            <FadeTransitionRouter>
-              <Home path="/" />
-              <AsyncAbout path="about" />
-              <AsyncProjects path="projects" />
-              <AsyncContact path="contact" />
-            </FadeTransitionRouter>
+          <Card>
+            <Location>
+              {({ location }) => (
+                <Transition
+                  native
+                  keys={location.pathname}
+                  from={{
+                    opacity: 0,
+                    display: 'none',
+                    transform: 'translate3d(100%,0,0)'
+                  }}
+                  enter={{
+                    opacity: 1,
+                    display: 'block',
+                    transform: 'translate3d(0%,0,0)'
+                  }}
+                  leave={{
+                    opacity: 0,
+                    display: 'none',
+                    transform: 'translate3d(-50%,0,0)'
+                  }}
+                >
+                  {style => (
+                    <Router location={location}>
+                      <Home path="/" style={style} />
+                      <About path="about" style={style} />
+                      <Projects path="projects" style={style} />
+                      <Contact path="contact" style={style} />
+                    </Router>
+                  )}
+                </Transition>
+              )}
+            </Location>
           </Card>
           <SocialIcons />
         </Content>
