@@ -20,7 +20,7 @@ const Contact = ({ style }) => (
         {
           id: 'email',
           icon: ['fas', 'envelope'],
-          link: `email:${contact.gmail}`,
+          link: `mailto:${contact.gmail}`,
           label: contact.gmail
         }
       ]}
