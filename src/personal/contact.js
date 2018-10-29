@@ -26,5 +26,5 @@ export default {
   hackerrank,
   gmail,
   phone,
-  blog
+  blog,
 }

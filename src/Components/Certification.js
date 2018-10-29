@@ -8,7 +8,7 @@ export default function Certification({
   date,
   license,
   link,
-  label
+  label,
 }) {
   return (
     <div>

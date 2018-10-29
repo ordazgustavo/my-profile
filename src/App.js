@@ -15,7 +15,7 @@ import {
   ProfileImage,
   Card,
   Content,
-  SocialIcons
+  SocialIcons,
 } from './Components'
 
 import navigation from './utilities/navigation'
@@ -31,20 +31,20 @@ export default function App() {
         const config = {
           method: 'GET',
           headers: {
-            Accept: 'application/vnd.github.v3+json'
+            Accept: 'application/vnd.github.v3+json',
           },
           mode: 'cors',
-          cache: 'default'
+          cache: 'default',
         }
         const response = await fetch(
           'https://api.github.com/users/ordazgustavo',
-          config
+          config,
         )
         const data = await response.json()
         setProfilePhoto(data.avatar_url)
       }
     },
-    [profilePhoto]
+    [profilePhoto],
   )
 
   return (
@@ -68,17 +68,17 @@ export default function App() {
                 from={{
                   opacity: 0,
                   display: 'none',
-                  transform: 'translate3d(100%,0,0)'
+                  transform: 'translate3d(100%,0,0)',
                 }}
                 enter={{
                   opacity: 1,
                   display: 'block',
-                  transform: 'translate3d(0%,0,0)'
+                  transform: 'translate3d(0%,0,0)',
                 }}
                 leave={{
                   opacity: 0,
                   display: 'none',
-                  transform: 'translate3d(-50%,0,0)'
+                  transform: 'translate3d(-50%,0,0)',
                 }}
               >
                 {style => (

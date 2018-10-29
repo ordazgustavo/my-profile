@@ -9,9 +9,9 @@ export default [
     links: [
       {
         to: 'https://github.com/ordazgustavo/react-material-dashboard',
-        label: 'Github'
-      }
-    ]
+        label: 'Github',
+      },
+    ],
   },
   {
     id: uuid(),
@@ -21,9 +21,9 @@ export default [
     links: [
       {
         to: 'https://github.com/ordazgustavo/create-react-project',
-        label: 'Github'
-      }
-    ]
+        label: 'Github',
+      },
+    ],
   },
   {
     id: uuid(),
@@ -33,13 +33,13 @@ export default [
     links: [
       {
         to: 'https://github.com/ordazgustavo/my-blog',
-        label: 'Github'
+        label: 'Github',
       },
       {
         to: 'https://blog.ordazgustavo.com',
-        label: 'Visitar'
-      }
-    ]
+        label: 'Visitar',
+      },
+    ],
   },
   {
     id: uuid(),
@@ -49,9 +49,9 @@ export default [
     links: [
       {
         to: 'https://github.com/ordazgustavo/reflex',
-        label: 'GitHub'
-      }
-    ]
+        label: 'GitHub',
+      },
+    ],
   },
   {
     id: uuid(),
@@ -62,8 +62,8 @@ export default [
     links: [
       {
         to: 'http://soysavio.com',
-        label: 'Visitar'
-      }
-    ]
-  }
+        label: 'Visitar',
+      },
+    ],
+  },
 ]

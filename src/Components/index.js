@@ -21,5 +21,5 @@ export {
   Certification,
   SocialIcons,
   Project,
-  Loading
+  Loading,
 }

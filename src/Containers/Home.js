@@ -9,9 +9,9 @@ export default function Home({ style }) {
     <animated.div style={style}>
       <p>Hola, soy Gustavo Ordaz.</p>
       <p>
-        Soy un Web Developer con dos años de experiencia en el área. Me
-        apasiona trabajar en el front-end, sin embargo, también tengo
-        experiencia con lenguajes de back-end como{' '}
+        Soy un Web Developer con dos años de experiencia en el área. Me apasiona
+        trabajar en el front-end, sin embargo, también tengo experiencia con
+        lenguajes de back-end como{' '}
         <strong>
           PHP <FontAwesomeIcon icon={['fab', 'php']} />
         </strong>{' '}

@@ -16,14 +16,14 @@ export default function Contact({ style }) {
             id: 'phone',
             icon: ['fas', 'phone'],
             link: `https://api.whatsapp.com/send?phone=${contact.phone}`,
-            label: contact.phone
+            label: contact.phone,
           },
           {
             id: 'email',
             icon: ['fas', 'envelope'],
             link: `mailto:${contact.gmail}`,
-            label: contact.gmail
-          }
+            label: contact.gmail,
+          },
         ]}
       />
 
@@ -34,20 +34,20 @@ export default function Contact({ style }) {
             id: 'twitter',
             icon: ['fab', 'twitter'],
             link: contact.twitter,
-            label: '@ordazsgustavo'
+            label: '@ordazsgustavo',
           },
           {
             id: 'instagram',
             icon: ['fab', 'instagram'],
             link: contact.instagram,
-            label: '@ordazsgustavo'
+            label: '@ordazsgustavo',
           },
           {
             id: 'linkedin',
             icon: ['fab', 'linkedin'],
             link: contact.linkedin,
-            label: 'Linkedin'
-          }
+            label: 'Linkedin',
+          },
         ]}
       />
 
@@ -58,26 +58,26 @@ export default function Contact({ style }) {
             id: 'platzi',
             icon: ['fas', 'heart'],
             link: contact.platzi,
-            label: 'Platzi'
+            label: 'Platzi',
           },
           {
             id: 'github',
             icon: ['fab', 'github'],
             link: contact.github,
-            label: '@ordazgustavo'
+            label: '@ordazgustavo',
           },
           {
             id: 'blog',
             icon: ['fas', 'rss'],
             link: contact.blog,
-            label: 'Blog'
+            label: 'Blog',
           },
           {
             id: 'hackerrank',
             icon: ['fab', 'hackerrank'],
             link: contact.hackerrank,
-            label: 'Hackerrank'
-          }
+            label: 'Hackerrank',
+          },
         ]}
       />
     </animated.div>

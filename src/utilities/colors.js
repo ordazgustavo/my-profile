@@ -14,5 +14,5 @@ export default {
   greenSheen,
   cambridgeBlue,
   azureishWhite,
-  black
+  black,
 }

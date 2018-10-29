@@ -4,16 +4,16 @@ export default [
   {
     id: uuid(),
     label: 'Acerca',
-    link: 'about'
+    link: 'about',
   },
   {
     id: uuid(),
     label: 'Proyectos',
-    link: 'projects'
+    link: 'projects',
   },
   {
     id: uuid(),
     label: 'Contacto',
-    link: 'contact'
-  }
+    link: 'contact',
+  },
 ]

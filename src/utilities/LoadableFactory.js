@@ -6,5 +6,5 @@ export default opts =>
     loading: Loading,
     delay: 500,
     timeout: 10000,
-    ...opts
+    ...opts,
   })

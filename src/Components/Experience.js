@@ -6,7 +6,7 @@ export default function Experience({
   location,
   position,
   date,
-  description
+  description,
 }) {
   return (
     <div>

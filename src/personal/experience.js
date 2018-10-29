@@ -9,7 +9,7 @@ export default [
     date: { from: '2018-05-01', to: '' },
     description: `Encargado del mantenimiento e inclusion de mejoras en las
     tres aplicaciones principales de la empresa (Admin, App Client y Merchant
-    Client)`
+    Client)`,
   },
   {
     id: uuid(),
@@ -22,7 +22,7 @@ export default [
     Mantenimiento del servidor. Realizada actividad de migración de servidor. 
     Encargado del desarrollo de SAVIO, aplicación web desarrollada con React 
     que permite la búsqueda del mejor tipo de cambio de forma automática según 
-    los requerimientos del usuario.`
+    los requerimientos del usuario.`,
   },
   {
     id: uuid(),
@@ -36,7 +36,7 @@ export default [
     departamentos de RRHH, Parque de Armas, Sala de Evidencias y
     Transporte y Logística. Cada módulo cuenta con características que le
     permiten a los directivos de dichos departamento un manejo eficiente
-    del mismo.`
+    del mismo.`,
   },
   {
     id: uuid(),
@@ -51,6 +51,6 @@ export default [
     Este sistema permite controlar la totalidad de la operación básica de
     la empresa, desde la recepción de ordenes de compra, reclutamiento y
     selección de personal, estimación de tarifas, contratación,
-    colocación y seguimiento de las asignaciones laborales.`
-  }
+    colocación y seguimiento de las asignaciones laborales.`,
+  },
 ]
