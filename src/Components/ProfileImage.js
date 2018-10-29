@@ -20,8 +20,10 @@ const Image = styled.img`
   ${elevation[2]};
 `
 
-export default props => (
-  <ImageWrapper>
-    <Image alt="" {...props} />
-  </ImageWrapper>
-)
+export default function ProfileImage(props) {
+  return (
+    <ImageWrapper>
+      <Image alt="" {...props} />
+    </ImageWrapper>
+  )
+}

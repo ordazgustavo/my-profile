@@ -16,16 +16,18 @@ const Item = styled.a`
   color: ${({ color }) => color || 'inherit'};
 `
 
-export default () => (
-  <Wrapper>
-    <Item href={contact.instagram} color="#cd486b" aria-label="Mi Instagram">
-      <FontAwesomeIcon icon={['fab', 'instagram']} />
-    </Item>
-    <Item href={contact.twitter} color="#00aced" aria-label="Mi Twitter">
-      <FontAwesomeIcon icon={['fab', 'twitter']} />
-    </Item>
-    <Item href={contact.github} color="#000" aria-label="Mi Github">
-      <FontAwesomeIcon icon={['fab', 'github']} />
-    </Item>
-  </Wrapper>
-)
+export default function SocialIcons() {
+  return (
+    <Wrapper>
+      <Item href={contact.instagram} color="#cd486b" aria-label="Mi Instagram">
+        <FontAwesomeIcon icon={['fab', 'instagram']} />
+      </Item>
+      <Item href={contact.twitter} color="#00aced" aria-label="Mi Twitter">
+        <FontAwesomeIcon icon={['fab', 'twitter']} />
+      </Item>
+      <Item href={contact.github} color="#000" aria-label="Mi Github">
+        <FontAwesomeIcon icon={['fab', 'github']} />
+      </Item>
+    </Wrapper>
+  )
+}
