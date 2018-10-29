@@ -13,8 +13,10 @@ const Icon = styled.div`
     font-size: 50px;
   }
 `
-export default () => (
-  <Icon>
-    <i className="fas fa-circle-notch fa-spin" />
-  </Icon>
-)
+export default function Spinner() {
+  return (
+    <Icon>
+      <i className="fas fa-circle-notch fa-spin" />
+    </Icon>
+  )
+}

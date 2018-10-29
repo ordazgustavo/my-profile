@@ -2,7 +2,7 @@ import React from 'react'
 
 import Spinner from './Spinner'
 
-const Loading = ({ pastDelay, error, timedOut, retry }) => {
+export default function Loading({ pastDelay, error, timedOut, retry }) {
   if (error) {
     return (
       <div>
@@ -28,5 +28,3 @@ const Loading = ({ pastDelay, error, timedOut, retry }) => {
   }
   return null
 }
-
-export default Loading

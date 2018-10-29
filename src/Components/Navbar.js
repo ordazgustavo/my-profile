@@ -85,14 +85,16 @@ const Name = styled.h1`
   ${media.tablet`display: block;`};
 `
 
-export const Navbar = ({ children }) => (
-  <Bar>
-    <NavLogo to="/">
-      <img src={logo} alt="" />
-      <Name>Gustavo Ordaz</Name>
-    </NavLogo>
-    <SiteNav>
-      <ul>{children}</ul>
-    </SiteNav>
-  </Bar>
-)
+export function Navbar({ children }) {
+  return (
+    <Bar>
+      <NavLogo to="/">
+        <img src={logo} alt="" />
+        <Name>Gustavo Ordaz</Name>
+      </NavLogo>
+      <SiteNav>
+        <ul>{children}</ul>
+      </SiteNav>
+    </Bar>
+  )
+}
