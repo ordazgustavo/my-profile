@@ -12,7 +12,9 @@ export default function Projects({ name, description, tech, links }) {
         <small>{tech}</small>
       </p>
       {links.map(link => (
-        <a href={link.to}>{link.label}</a>
+        <a key={link.to} href={link.to}>
+          {link.label}
+        </a>
       ))}
     </div>
   )

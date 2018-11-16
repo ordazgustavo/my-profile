@@ -3,7 +3,13 @@ import ReactDOM from 'react-dom'
 import 'typeface-ubuntu'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
-import './globalStyles'
+import GlobalStyles from './globalStyles'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <React.Fragment>
+    <App />
+    <GlobalStyles />
+  </React.Fragment>,
+  document.getElementById('root'),
+)
 registerServiceWorker()

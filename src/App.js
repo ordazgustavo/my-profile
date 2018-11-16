@@ -22,11 +22,34 @@ import navigation from './utilities/navigation'
 
 library.add(fas, fab)
 
+const routes = [
+  {
+    id: 'home',
+    component: Home,
+    path: '/',
+  },
+  {
+    id: 'about',
+    component: About,
+    path: 'about',
+  },
+  {
+    id: 'projects',
+    component: Projects,
+    path: 'projects',
+  },
+  {
+    id: 'contact',
+    component: Contact,
+    path: 'contact',
+  },
+]
+
 export default function App() {
   const [profilePhoto, setProfilePhoto] = useState('')
 
   useEffect(
-    async () => {
+    () => {
       if (!profilePhoto) {
         const config = {
           method: 'GET',
@@ -36,12 +59,10 @@ export default function App() {
           mode: 'cors',
           cache: 'default',
         }
-        const response = await fetch(
-          'https://api.github.com/users/ordazgustavo',
-          config,
+        fetch('https://api.github.com/users/ordazgustavo', config).then(
+          response =>
+            response.json().then(data => setProfilePhoto(data.avatar_url)),
         )
-        const data = await response.json()
-        setProfilePhoto(data.avatar_url)
       }
     },
     [profilePhoto],
@@ -64,7 +85,8 @@ export default function App() {
             {({ location }) => (
               <Transition
                 native
-                keys={location.pathname}
+                items={routes}
+                keys={item => item.id}
                 from={{
                   opacity: 0,
                   display: 'none',
@@ -81,12 +103,9 @@ export default function App() {
                   transform: 'translate3d(-50%,0,0)',
                 }}
               >
-                {style => (
+                {item => style => (
                   <Router location={location}>
-                    <Home path="/" style={style} />
-                    <About path="about" style={style} />
-                    <Projects path="projects" style={style} />
-                    <Contact path="contact" style={style} />
+                    <item.component path={item.path} style={style} />
                   </Router>
                 )}
               </Transition>
