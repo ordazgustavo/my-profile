@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Router, Location } from '@reach/router'
-import { Transition } from 'react-spring'
-
+import { Spring, Transition, config } from 'react-spring'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import { Home, About, Projects, Contact } from './Containers'
-
 import {
   Layout,
   Navbar,
@@ -20,54 +18,13 @@ import {
 
 import navigation from './utilities/navigation'
 
+import profilePhoto from './assets/images/profile-square.jpg'
+
 library.add(fas, fab)
 
-const routes = [
-  {
-    id: 'home',
-    component: Home,
-    path: '/',
-  },
-  {
-    id: 'about',
-    component: About,
-    path: 'about',
-  },
-  {
-    id: 'projects',
-    component: Projects,
-    path: 'projects',
-  },
-  {
-    id: 'contact',
-    component: Contact,
-    path: 'contact',
-  },
-]
+const cancelMap = new WeakMap()
 
 export default function App() {
-  const [profilePhoto, setProfilePhoto] = useState('')
-
-  useEffect(
-    () => {
-      if (!profilePhoto) {
-        const config = {
-          method: 'GET',
-          headers: {
-            Accept: 'application/vnd.github.v3+json',
-          },
-          mode: 'cors',
-          cache: 'default',
-        }
-        fetch('https://api.github.com/users/ordazgustavo', config).then(
-          response =>
-            response.json().then(data => setProfilePhoto(data.avatar_url)),
-        )
-      }
-    },
-    [profilePhoto],
-  )
-
   return (
     <Layout>
       <Navbar>
@@ -79,39 +36,51 @@ export default function App() {
       </Navbar>
 
       <Content direction="column">
-        <ProfileImage src={profilePhoto} />
-        <Card>
-          <Location>
-            {({ location }) => (
-              <Transition
-                native
-                items={routes}
-                keys={item => item.id}
-                from={{
-                  opacity: 0,
-                  display: 'none',
-                  transform: 'translate3d(100%,0,0)',
-                }}
-                enter={{
-                  opacity: 1,
-                  display: 'block',
-                  transform: 'translate3d(0%,0,0)',
-                }}
-                leave={{
-                  opacity: 0,
-                  display: 'none',
-                  transform: 'translate3d(-50%,0,0)',
-                }}
-              >
-                {item => style => (
-                  <Router location={location}>
-                    <item.component path={item.path} style={style} />
+        <Spring
+          from={{ opacity: 0, transform: 'translateY(-200px)' }}
+          to={{ opacity: 1, transform: 'translateY(0)' }}
+          config={config.stiff}
+          delay={50}
+        >
+          {props => <ProfileImage src={profilePhoto} style={props} />}
+        </Spring>
+        <Location>
+          {({ location }) => (
+            <Transition
+              native
+              items={location}
+              keys={currLocation => currLocation.pathname}
+              from={{
+                opacity: 0,
+                display: 'none',
+                transform: 'translateY(150px)',
+              }}
+              enter={{
+                opacity: 1,
+                display: 'block',
+                transform: 'translateY(0)',
+              }}
+              leave={item => async (next, cancel) => {
+                cancelMap.set(item, cancel)
+                await next({ display: 'none' })
+                await next({ opacity: 0 })
+                await next({ transform: 'translateY(75px)' }, true)
+              }}
+              config={config.gentle}
+            >
+              {currLocation => style => (
+                <Card style={style}>
+                  <Router location={currLocation}>
+                    <Home path="/" />
+                    <About path="about" />
+                    <Projects path="projects" />
+                    <Contact path="contact" />
                   </Router>
-                )}
-              </Transition>
-            )}
-          </Location>
-        </Card>
+                </Card>
+              )}
+            </Transition>
+          )}
+        </Location>
         <SocialIcons />
       </Content>
     </Layout>

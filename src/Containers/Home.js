@@ -1,12 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { animated } from 'react-spring'
 
 import { contact } from '../personal'
 
-export default function Home({ style }) {
+export default function Home() {
   return (
-    <animated.div style={style}>
+    <React.Fragment>
       <p>Hola, soy Gustavo Ordaz.</p>
       <p>
         Soy un Web Developer con dos años de experiencia en el área. Me apasiona
@@ -32,6 +31,6 @@ export default function Home({ style }) {
       <a href={contact.github} target="_blank" rel="noopener noreferrer">
         GitHub
       </a>
-    </animated.div>
+    </React.Fragment>
   )
 }

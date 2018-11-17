@@ -10,7 +10,7 @@ const navHeight = '52px'
 const Bar = styled.header`
   background: ${colors.maastrichtBlue};
   ${elevation[4]};
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   flex-direction: column;

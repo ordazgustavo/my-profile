@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { animated } from 'react-spring'
 
 import { elevation, transition, colors } from '../utilities'
 
-const Card = styled.div`
+const Card = styled(animated.div)`
   background: white;
   border-radius: 15px;
   padding: 50px;

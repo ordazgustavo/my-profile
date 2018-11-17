@@ -1,17 +1,16 @@
 import React from 'react'
-import { animated } from 'react-spring'
 
 import { Project } from '../Components'
 import { projects } from '../personal'
 
-export default function Projects({ style }) {
+export default function Projects() {
   return (
-    <animated.div style={style}>
+    <React.Fragment>
       <h2>Proyectos</h2>
       <hr />
       {projects.map(proj => (
         <Project key={proj.id} {...proj} />
       ))}
-    </animated.div>
+    </React.Fragment>
   )
 }

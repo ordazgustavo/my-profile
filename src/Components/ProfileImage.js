@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { animated } from 'react-spring'
 
 import { elevation, colors } from '../utilities'
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(animated.div)`
   position: relative;
   width: 190px;
   height: 140px;
+  z-index: 2;
 `
 
 const Image = styled.img`
@@ -20,9 +22,9 @@ const Image = styled.img`
   ${elevation[2]};
 `
 
-export default function ProfileImage(props) {
+export default function ProfileImage({ style, ...props }) {
   return (
-    <ImageWrapper>
+    <ImageWrapper style={style}>
       <Image alt="" {...props} />
     </ImageWrapper>
   )

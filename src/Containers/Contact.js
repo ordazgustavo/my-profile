@@ -1,12 +1,11 @@
 import React from 'react'
-import { animated } from 'react-spring'
 
 import { ContactList } from '../Components'
 import { contact } from '../personal'
 
-export default function Contact({ style }) {
+export default function Contact() {
   return (
-    <animated.div style={style}>
+    <React.Fragment>
       <h2>Contacto</h2>
       <hr />
       <ContactList
@@ -80,6 +79,6 @@ export default function Contact({ style }) {
           },
         ]}
       />
-    </animated.div>
+    </React.Fragment>
   )
 }
