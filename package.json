@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=node",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"**/*.+(js|md|css|json)\""
+    "format": "prettier --write \"**/*.+(ts|js|md|css|json)\""
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
@@ -51,7 +51,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,md,css,json}": [
+      "*.{ts,js,md,css,json}": [
         "prettier --write",
         "git add"
       ]

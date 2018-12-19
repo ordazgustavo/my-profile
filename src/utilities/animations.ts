@@ -1,4 +1,8 @@
-export function fluidHeight(node: HTMLElement, prevHeight: string, targetHeight: string) {
+export function fluidHeight(
+  node: HTMLElement,
+  prevHeight: string,
+  targetHeight: string,
+) {
   return node.animate(
     [
       { height: `${parseInt(prevHeight, 10) + 100}px` },
