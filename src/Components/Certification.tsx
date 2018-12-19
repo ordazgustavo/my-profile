@@ -2,6 +2,15 @@ import React from 'react'
 import format from 'date-fns/format'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+interface IProps {
+  issuer: string,
+  title: string,
+  date: string,
+  license: string,
+  link: string,
+  label: string
+}
+
 export default function Certification({
   issuer,
   title,
@@ -9,7 +18,7 @@ export default function Certification({
   license,
   link,
   label,
-}) {
+}: IProps) {
   return (
     <div>
       <p>

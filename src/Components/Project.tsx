@@ -1,6 +1,13 @@
 import React from 'react'
 
-export default function Projects({ name, description, tech, links }) {
+interface IProps {
+  name: string,
+  description: string,
+  tech: string,
+  links: { to: string, label: string }[]
+}
+
+export default function Projects({ name, description, tech, links }: IProps) {
   return (
     <div>
       <p>

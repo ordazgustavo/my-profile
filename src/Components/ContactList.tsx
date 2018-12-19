@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 import { colors } from '../utilities'
 
@@ -13,7 +14,12 @@ const ListItem = styled.li`
   }
 `
 
-export default function ContactList({ title, items }) {
+interface IProps {
+  title: string,
+  items: { id: string, icon: IconProp, link: string, label: string }[]
+}
+
+export default function ContactList({ title, items }: IProps) {
   return (
     <div>
       <p>{title}:</p>

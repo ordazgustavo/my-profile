@@ -1,9 +1,10 @@
 import React from 'react'
+import { RouteComponentProps } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { contact } from '../personal'
 
-export default function Home() {
+export default function Home(props: RouteComponentProps) {
   return (
     <React.Fragment>
       <p>Hola, soy Gustavo Ordaz.</p>

@@ -1,5 +1,5 @@
-const fluidHeight = (node, prevHeight, targetHeight) =>
-  node.animate(
+export function fluidHeight(node: HTMLElement, prevHeight: string, targetHeight: string) {
+  return node.animate(
     [
       { height: `${parseInt(prevHeight, 10) + 100}px` },
       { height: `${parseInt(targetHeight, 10) + 100}px` },
@@ -11,7 +11,4 @@ const fluidHeight = (node, prevHeight, targetHeight) =>
       iterations: 1,
     },
   )
-
-export default {
-  fluidHeight,
 }

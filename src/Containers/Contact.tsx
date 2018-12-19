@@ -1,9 +1,10 @@
 import React from 'react'
+import { RouteComponentProps } from '@reach/router';
 
 import { ContactList } from '../Components'
 import { contact } from '../personal'
 
-export default function Contact() {
+export default function Contact(props: RouteComponentProps) {
   return (
     <React.Fragment>
       <h2>Contacto</h2>
