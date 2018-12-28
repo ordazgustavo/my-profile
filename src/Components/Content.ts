@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-const Content = styled.main`
+interface IProps {
+  direction?: string
+}
+
+const Content = styled.main<IProps>`
   padding: 110px 0;
   display: flex;
   justify-content: center;

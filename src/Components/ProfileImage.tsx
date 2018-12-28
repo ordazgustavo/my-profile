@@ -22,10 +22,10 @@ const Image = styled.img`
   ${elevation[2]};
 `
 
-export default function ProfileImage({ style, ...props }) {
+export default function ProfileImage({ style, src }: {style: any, src: string}) {
   return (
     <ImageWrapper style={style}>
-      <Image alt="" {...props} />
+      <Image alt="" src={src} />
     </ImageWrapper>
   )
 }

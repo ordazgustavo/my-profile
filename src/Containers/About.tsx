@@ -1,9 +1,10 @@
 import React from 'react'
+import { RouteComponentProps } from '@reach/router';
 
 import { Certification, Experience } from '../Components'
 import { experience, certifications } from '../personal'
 
-export default function About() {
+export default function About(props: RouteComponentProps) {
   return (
     <React.Fragment>
       <h2>Información Laboral</h2>

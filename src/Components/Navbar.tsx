@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactChild } from 'react'
 import { Link } from '@reach/router'
 import styled from 'styled-components'
 
@@ -67,7 +67,6 @@ export const NavLink = styled(Link)`
 
 const Name = styled.h1`
   margin: 0;
-  /* padding: 15px; */
   top: 0;
   position: absolute;
   display: none;
@@ -85,7 +84,11 @@ const Name = styled.h1`
   ${media.tablet`display: block;`};
 `
 
-export function Navbar({ children }) {
+interface IProps {
+  children: ReactChild[]
+}
+
+export function Navbar({ children }: IProps) {
   return (
     <Bar>
       <NavLogo to="/">

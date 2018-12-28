@@ -7,14 +7,20 @@ const sizes = {
   phone: 376,
 }
 
-const media = Object.keys(sizes).reduce((accumulator, label) => {
-  const emSize = sizes[label] / 16
-  accumulator[label] = (...args) => css`
-    @media (min-width: ${emSize}em) {
-      ${css(...args)};
-    }
-  `
-  return accumulator
-}, {})
+const media = {
+  giant: (...args) => null,
+  desktop: (...args) => null,
+  tablet: (...args) => null,
+  phone: (...args) => null,
+  ...Object.keys(sizes).reduce((accumulator, label) => {
+    const emSize = sizes[label] / 16
+    accumulator[label] = (...args) => css`
+      @media (min-width: ${emSize}em) {
+        ${css(...args)};
+      }
+    `
+    return accumulator
+  }, {}),
+}
 
 export default media
