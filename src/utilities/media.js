@@ -1,22 +1,4 @@
 import { css } from 'styled-components'
-// import {
-//   FlattenSimpleInterpolation
-// } from 'styled-components'
-
-// interface ISizes {
-//   [giant: string]: number
-//   desktop: number
-//   tablet: number
-//   phone: number
-// }
-
-// interface IAcc {
-//   [x: string]: (...args: TemplateStringsArray[]) => FlattenSimpleInterpolation
-// }
-
-// interface IMedia {
-//   [x: string]: (...args: TemplateStringsArray[]) => FlattenSimpleInterpolation
-// }
 
 const sizes = {
   giant: 1170,

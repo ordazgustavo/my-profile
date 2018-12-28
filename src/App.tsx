@@ -22,8 +22,6 @@ import profilePhoto from './assets/images/profile-square.jpg'
 
 library.add(fas, fab)
 
-const cancelMap = new WeakMap()
-
 export default function App() {
   return (
     <Layout>
@@ -65,12 +63,6 @@ export default function App() {
                 opacity: 0,
                 transform: 'translateY(75px)'
               }}
-              // leave={(item: any) => async (next: any, cancel: any) => {
-              //   cancelMap.set(item, cancel)
-              //   await next({ display: 'none' })
-              //   await next({ opacity: 0 })
-              //   await next({ transform: 'translateY(75px)' }, true)
-              // }}
               config={config.gentle}
             >
               {currLocation => style => (
