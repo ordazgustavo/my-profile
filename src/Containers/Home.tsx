@@ -26,7 +26,7 @@ export default function Home(props: RouteComponentProps) {
         , ya sea, creando y desplegando aplicaciones o trabajando con
         aplicaciones previamente desarrolladas.
       </p>
-      <a href={contact.blog} target="_blank" rel="noopener noreferrer">
+      <a style={{ marginRight: 15 }} href={contact.blog} target="_blank" rel="noopener noreferrer">
         Blog
       </a>{' '}
       <a href={contact.github} target="_blank" rel="noopener noreferrer">

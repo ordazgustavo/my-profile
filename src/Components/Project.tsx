@@ -1,10 +1,10 @@
 import React from 'react'
 
 interface IProps {
-  name: string,
-  description: string,
-  tech: string,
-  links: { to: string, label: string }[]
+  name: string
+  description: string
+  tech: string
+  links: { to: string; label: string }[]
 }
 
 export default function Projects({ name, description, tech, links }: IProps) {
@@ -19,7 +19,7 @@ export default function Projects({ name, description, tech, links }: IProps) {
         <small>{tech}</small>
       </p>
       {links.map(link => (
-        <a key={link.to} href={link.to}>
+        <a style={{ marginRight: 15 }} key={link.to} href={link.to}>
           {link.label}
         </a>
       ))}

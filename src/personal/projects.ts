@@ -3,6 +3,18 @@ import uuid from 'uuid'
 export default [
   {
     id: uuid(),
+    name: 'HERE Maps React 🌎',
+    description: 'React components library for HERE Maps',
+    tech: 'React, Typescript',
+    links: [
+      {
+        to: 'https://github.com/ordazgustavo/here-maps-react',
+        label: 'Github',
+      },
+    ],
+  },
+  {
+    id: uuid(),
     name: 'React Material Dashboard 🐙',
     description: 'OSS Material Design Dashboard.',
     tech: 'React, Material-UI',
