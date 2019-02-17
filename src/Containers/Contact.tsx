@@ -1,9 +1,21 @@
 import React from 'react'
-import { RouteComponentProps } from '@reach/router';
+import { RouteComponentProps } from '@reach/router'
+import {
+  FaPhone,
+  FaEnvelope,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaGithub,
+  FaHeart,
+  FaRss,
+  FaHackerrank,
+} from 'react-icons/fa'
 
 import { ContactList } from '../Components'
 import { contact } from '../personal'
 
+// @ts-ignore
 export default function Contact(props: RouteComponentProps) {
   return (
     <React.Fragment>
@@ -14,13 +26,13 @@ export default function Contact(props: RouteComponentProps) {
         items={[
           {
             id: 'phone',
-            icon: ['fas', 'phone'],
+            icon: FaPhone,
             link: `https://api.whatsapp.com/send?phone=${contact.phone}`,
             label: contact.phone,
           },
           {
             id: 'email',
-            icon: ['fas', 'envelope'],
+            icon: FaEnvelope,
             link: `mailto:${contact.gmail}`,
             label: contact.gmail,
           },
@@ -32,19 +44,19 @@ export default function Contact(props: RouteComponentProps) {
         items={[
           {
             id: 'twitter',
-            icon: ['fab', 'twitter'],
+            icon: FaTwitter,
             link: contact.twitter,
             label: '@ordazsgustavo',
           },
           {
             id: 'instagram',
-            icon: ['fab', 'instagram'],
+            icon: FaInstagram,
             link: contact.instagram,
             label: '@ordazsgustavo',
           },
           {
             id: 'linkedin',
-            icon: ['fab', 'linkedin'],
+            icon: FaLinkedin,
             link: contact.linkedin,
             label: 'Linkedin',
           },
@@ -56,25 +68,25 @@ export default function Contact(props: RouteComponentProps) {
         items={[
           {
             id: 'platzi',
-            icon: ['fas', 'heart'],
+            icon: FaHeart,
             link: contact.platzi,
             label: 'Platzi',
           },
           {
             id: 'github',
-            icon: ['fab', 'github'],
+            icon: FaGithub,
             link: contact.github,
             label: '@ordazgustavo',
           },
           {
             id: 'blog',
-            icon: ['fas', 'rss'],
+            icon: FaRss,
             link: contact.blog,
             label: 'Blog',
           },
           {
             id: 'hackerrank',
-            icon: ['fab', 'hackerrank'],
+            icon: FaHackerrank,
             link: contact.hackerrank,
             label: 'Hackerrank',
           },

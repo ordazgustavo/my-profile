@@ -1,8 +1,6 @@
-import uuid from 'uuid'
-
 export default [
   {
-    id: uuid(),
+    id: 'urbaner',
     company: 'Urbaner',
     location: 'Lima, PE',
     position: 'Front-end Developer',
@@ -12,7 +10,7 @@ export default [
     Client)`,
   },
   {
-    id: uuid(),
+    id: 'cambista-online',
     company: 'Cambista Online',
     location: 'Lima, PE',
     position: 'Full-stack Developer',
@@ -25,7 +23,7 @@ export default [
     los requerimientos del usuario.`,
   },
   {
-    id: uuid(),
+    id: 'polimaneiro',
     company: 'IA Policía Municipal de Maneiro',
     location: 'Pampatar, VE',
     position: 'Pasante',
@@ -39,7 +37,7 @@ export default [
     del mismo.`,
   },
   {
-    id: uuid(),
+    id: 'enginext',
     company: 'ENGINEXT Corporation',
     location: 'Houston, USA',
     position: 'Administrador de base de datos',

@@ -1,6 +1,6 @@
 import React from 'react'
 import format from 'date-fns/format'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FaExternalLinkAlt} from 'react-icons/fa'
 
 interface IProps {
   issuer: string,
@@ -32,7 +32,7 @@ export default function Certification({
       <a href={link} target="_blank" rel="noopener noreferrer">
         {label}{' '}
         <small>
-          <FontAwesomeIcon icon={['fas', 'external-link-alt']} />
+          <FaExternalLinkAlt />
         </small>
       </a>
     </div>

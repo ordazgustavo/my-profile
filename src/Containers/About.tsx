@@ -1,9 +1,9 @@
 import React from 'react'
-import { RouteComponentProps } from '@reach/router';
-
+import { RouteComponentProps } from '@reach/router'
 import { Certification, Experience } from '../Components'
 import { experience, certifications } from '../personal'
 
+// @ts-ignore
 export default function About(props: RouteComponentProps) {
   return (
     <React.Fragment>

@@ -1,9 +1,6 @@
 import React from 'react'
-import { Router, Location } from '@reach/router'
-import { Spring, Transition, config } from 'react-spring'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { Router, RouteComponentProps } from '@reach/router'
+import { useSpring, useTransition, config } from 'react-spring'
 
 import { Home, About, Projects, Contact } from './Containers'
 import {
@@ -20,9 +17,31 @@ import navigation from './utilities/navigation'
 
 import profilePhoto from './assets/images/profile-square.jpg'
 
-library.add(fas, fab)
+export default function App({ location }: RouteComponentProps) {
+  const springProps = useSpring({
+    from: { opacity: 0, transform: 'translateY(-200px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+  })
 
-export default function App() {
+  const transitions = useTransition(location, item => item.pathname, {
+    from: {
+      opacity: 0,
+      display: 'none',
+      transform: 'translateY(150px)',
+    },
+    enter: {
+      opacity: 1,
+      display: 'block',
+      transform: 'translateY(0)',
+    },
+    leave: {
+      display: 'none',
+      opacity: 0,
+      transform: 'translateY(75px)',
+    },
+    config: config.gentle,
+  })
+
   return (
     <Layout>
       <Navbar>
@@ -34,50 +53,17 @@ export default function App() {
       </Navbar>
 
       <Content direction="column">
-        <Spring
-          from={{ opacity: 0, transform: 'translateY(-200px)' }}
-          to={{ opacity: 1, transform: 'translateY(0)' }}
-          config={config.stiff}
-          delay={50}
-        >
-          {props => <ProfileImage src={profilePhoto} style={props} />}
-        </Spring>
-        <Location>
-          {({ location }) => (
-            <Transition
-              native
-              items={location}
-              keys={currLocation => currLocation.pathname}
-              from={{
-                opacity: 0,
-                display: 'none',
-                transform: 'translateY(150px)',
-              }}
-              enter={{
-                opacity: 1,
-                display: 'block',
-                transform: 'translateY(0)',
-              }}
-              leave={{
-                display: 'none',
-                opacity: 0,
-                transform: 'translateY(75px)'
-              }}
-              config={config.gentle}
-            >
-              {currLocation => style => (
-                <Card style={style}>
-                  <Router location={currLocation}>
-                    <Home path="/" />
-                    <About path="about" />
-                    <Projects path="projects" />
-                    <Contact path="contact" />
-                  </Router>
-                </Card>
-              )}
-            </Transition>
-          )}
-        </Location>
+        <ProfileImage src={profilePhoto} style={springProps} />
+        {transitions.map(({ item, props, key }) => (
+          <Card key={key} style={props}>
+            <Router location={item}>
+              <Home path="/" />
+              <About path="about" />
+              <Projects path="projects" />
+              <Contact path="contact" />
+            </Router>
+          </Card>
+        ))}
         <SocialIcons />
       </Content>
     </Layout>

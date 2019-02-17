@@ -1,8 +1,6 @@
-import uuid from 'uuid'
-
 export default [
   {
-    id: uuid(),
+    id: 'here-maps-react',
     name: 'HERE Maps React 🌎',
     description: 'React components library for HERE Maps',
     tech: 'React, Typescript',
@@ -14,7 +12,7 @@ export default [
     ],
   },
   {
-    id: uuid(),
+    id: 'react-material-dashboard',
     name: 'React Material Dashboard 🐙',
     description: 'OSS Material Design Dashboard.',
     tech: 'React, Material-UI',
@@ -26,7 +24,7 @@ export default [
     ],
   },
   {
-    id: uuid(),
+    id: 'create-react-project',
     name: 'Create React Project 📚',
     description: 'Heavily opinionated React project boilerplate.',
     tech: 'React',
@@ -38,7 +36,7 @@ export default [
     ],
   },
   {
-    id: uuid(),
+    id: 'blog-personal',
     name: 'Blog personal 👨‍💻',
     description: 'Mi blog personal, enfocado en desarrollo web.',
     tech: 'React, Gatsby, GraphQL, Netlify CMS',
@@ -54,7 +52,7 @@ export default [
     ],
   },
   {
-    id: uuid(),
+    id: 'reflex',
     name: 'Reflex ⚛️',
     description: "JavaScript library to create dynamic UI's",
     tech: 'Javascript',
@@ -66,7 +64,7 @@ export default [
     ],
   },
   {
-    id: uuid(),
+    id: 'soy-savio',
     name: 'Soy Savio',
     description: `Autor de Soy Savio, aplicación web desarrollada en React, 
     que permite conectar a personas con agencias de cambio de manera segura.`,

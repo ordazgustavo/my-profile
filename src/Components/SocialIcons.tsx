@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FiInstagram, FiTwitter, FiGithub } from 'react-icons/fi'
 
 import { contact } from '../personal'
 
@@ -20,13 +20,13 @@ export default function SocialIcons() {
   return (
     <Wrapper>
       <Item href={contact.instagram} color="#cd486b" aria-label="Mi Instagram">
-        <FontAwesomeIcon icon={['fab', 'instagram']} />
+        <FiInstagram />
       </Item>
       <Item href={contact.twitter} color="#00aced" aria-label="Mi Twitter">
-        <FontAwesomeIcon icon={['fab', 'twitter']} />
+        <FiTwitter />
       </Item>
       <Item href={contact.github} color="#000" aria-label="Mi Github">
-        <FontAwesomeIcon icon={['fab', 'github']} />
+        <FiGithub />
       </Item>
     </Wrapper>
   )

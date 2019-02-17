@@ -1,18 +1,16 @@
-import uuid from 'uuid'
-
 export default [
   {
-    id: uuid(),
+    id: 'about',
     label: 'Acerca',
     link: 'about',
   },
   {
-    id: uuid(),
+    id: 'projects',
     label: 'Proyectos',
     link: 'projects',
   },
   {
-    id: uuid(),
+    id: 'contact',
     label: 'Contacto',
     link: 'contact',
   },

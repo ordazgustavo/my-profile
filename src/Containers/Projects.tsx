@@ -1,9 +1,10 @@
 import React from 'react'
-import { RouteComponentProps } from '@reach/router';
+import { RouteComponentProps } from '@reach/router'
 
 import { Project } from '../Components'
 import { projects } from '../personal'
 
+// @ts-ignore
 export default function Projects(props: RouteComponentProps) {
   return (
     <React.Fragment>

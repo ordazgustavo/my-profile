@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import {IconType} from 'react-icons'
 
 import { colors } from '../utilities'
 
@@ -16,7 +15,7 @@ const ListItem = styled.li`
 
 interface IProps {
   title: string,
-  items: { id: string, icon: IconProp, link: string, label: string }[]
+  items: { id: string, icon: IconType, link: string, label: string }[]
 }
 
 export default function ContactList({ title, items }: IProps) {
@@ -26,7 +25,7 @@ export default function ContactList({ title, items }: IProps) {
       <ul>
         {items.map(item => (
           <ListItem key={item.id}>
-            {item.icon ? <FontAwesomeIcon icon={item.icon} /> : null}
+            {item.icon ? <item.icon /> : null}
             <a href={item.link} target="_blank" rel="noopener noreferrer">
               {item.label}
             </a>
